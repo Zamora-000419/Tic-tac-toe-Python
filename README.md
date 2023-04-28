@@ -168,4 +168,10 @@ def enter_move(board):
 	board[row][col] = 'O'
 
 ```
-En este bloque se define una función llamda `enter_move` que toma como argumento la matriz generada en el bloque anterior y solicita al uuario que ingrese su movimiento
+En este bloque se define una función llamda `enter_move` que toma como argumento la matriz generada en el bloque anterior y solicita al usuario que ingrese su movimiento.
+
+El código utiliza un bucle `while` que se ejecuta hasta que el usuario ingresa un movimiento válido. Primero, se solicita al usuario que ingrese un movimiento utilizando la función `input()`. Luego, el código verifica si el movimiento ingresado es válido, es decir, si tiene una longitud de 1 y es un número del 1 al 9 inclusive. Si el movimiento no es válido, se muestra un mensaje de error y se solicita al usuario que ingrese un movimiento nuevamente.
+
+Si el movimiento es válido, se resta 1 al número ingresado y se calcula la fila y la columna correspondiente a ese movimiento en la matriz `board`. Luego, se verifica si la casilla correspondiente en la matriz `board` está vacía, es decir, si no contiene las letras `O` o `X`. Si la casilla no está vacía, se muestra un mensaje de error y se solicita al usuario que ingrese un movimiento nuevamente.
+
+Si la casilla está vacía, se establece la letra `O` en la casilla correspondiente en la matriz board.
