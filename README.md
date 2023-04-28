@@ -146,3 +146,26 @@ def display_board(board):
 Se define una función llamada `Display_board` que toma como argumento una matriz de 3x3 llamada `board`, que representa el tablero de un juego clásico de tic-tac-toe. La función muestra el tablero en la consola.
 
 El tablero se dibuja mediante carácteres de texto y la función hace uso de ciclos `for` para recorrer las filas y columnas del tablero. Los ciclos anidados se encargan de imprimir los carácteres necesarios para dibujar cada fila y columna.
+## Movimiento
+```python
+
+def enter_move(board):
+	ok = False
+	while not ok:
+		move = input("Ingresa tu movimiento: ") 
+		ok = len(move) == 1 and move >= '1' and move <= '9'
+		if not ok:
+			print("Movimiento erróneo, ingrésalo nuevamente")
+			continue
+		move = int(move) - 1
+		row = move // 3
+		col = move % 3
+		sign = board[row][col]
+		ok = sign not in ['O','X'] 
+		if not ok:
+			print("¡Cuadro ocupado, ingresa nuevamente!")
+			continue
+	board[row][col] = 'O'
+
+```
+En este bloque se define una función llamda `enter_move` que toma como argumento la matriz generada en el bloque anterior y solicita al uuario que ingrese su movimiento
